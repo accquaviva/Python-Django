@@ -1,0 +1,14 @@
+<ul>
+{% for veiculo in veiculos %}
+    <li>
+        <a href="{% url 'core_veiculos_update' veiculo.id %}">{{ veiculo }}</a>
+    </li>
+{% endfor %}
+
+</ul>
+
+<form action="{%url 'core_veiculos_novo'%}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Salvar</button>
+</form>

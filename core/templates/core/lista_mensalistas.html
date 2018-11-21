@@ -1,0 +1,13 @@
+<ul>
+{% for mensalista in mensalistas %}
+    <li>
+        <a href="{% url 'core_mensalistas_update' mensalista.id %}">{{ mensalista }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'core_mensalistas_novo' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+</form>

@@ -1,0 +1,15 @@
+{{ movrotativos }}
+
+
+<form action="{% url 'core_movrotativos_update' movrotativos.id %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Salvar</button>
+</form>
+
+<form action="{% url 'core_movrotativos_delete' movrotativos.id %}" method="get">
+    {% csrf_token %}
+
+    <button type="submit">Deletar</button>
+</form>

@@ -1,0 +1,15 @@
+{{ veiculo }}
+
+
+<form action="{% url 'core_veiculos_update' veiculo.id %}"method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Salvar</button>
+</form>
+
+<form action="{% url 'core_veiculos_delete' veiculo.id %}" method="get">
+    <button type="submit">Excluir</button>
+</form>
+
+

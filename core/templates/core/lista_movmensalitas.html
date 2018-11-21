@@ -1,0 +1,14 @@
+
+<ul>
+{% for movmensalista in movmensalistas %}
+    <li>
+    <a href="{% url 'core_movmensalitas_update' movmensalista.id %}">{{ movmensalista }}</a>
+    </li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'core_movmensalitas_novo' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+</form>
